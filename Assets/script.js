@@ -5,8 +5,8 @@ function lowToHighArray(low, high) {
   }
   return array;
 }
-const wordLength = 8;
-const choiceArray = [];
+let wordLength = 8;
+let choiceArray = [];
 const uppercaseCodes = lowToHighArray(65, 90);
 const lowercaseCodes = lowToHighArray(97, 122);
 const numberCodes = lowToHighArray(48, 57);
@@ -35,14 +35,14 @@ function writePassword() {
   } else {
     passwordText.value = "";
   }
-
+}
 
 
 function generatePassword() {
-  const password = "";
+  let password = "";
   for(var i = 0; i < wordLength; i++) {
     var randomChar = Math.floor(Math.random() * choiceArray.length);
-    password = password + choiceArray[randomChar];
+    password = password + String.fromCharCode(choiceArray[randomChar]);
   }
   return password;
 }
