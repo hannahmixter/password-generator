@@ -1,10 +1,3 @@
-function lowToHighArray(low, high) {
-  const array = [];
-  for (let i = low; i <= high; i++) {
-    array.push(i);
-  }
-  return array;
-}
 let wordLength = 8;
 let choiceArray = [];
 const uppercaseCodes = lowToHighArray(65, 90);
@@ -12,11 +5,20 @@ const lowercaseCodes = lowToHighArray(97, 122);
 const numberCodes = lowToHighArray(48, 57);
 const specialCharCodes = lowToHighArray(33, 47).concat(
   lowToHighArray(58, 64)
-).concat(
-  lowToHighArray(91, 96)
-).concat(
-  lowToHighArray(123, 126)
-);
+  ).concat(
+    lowToHighArray(91, 96)
+    ).concat(
+      lowToHighArray(123, 126)
+      );
+
+//make array of character codes
+function lowToHighArray(low, high) {
+    const array = [];
+    for (let i = low; i <= high; i++) {
+          array.push(i);
+        }
+      return array;
+    }
 
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
@@ -37,7 +39,7 @@ function writePassword() {
   }
 }
 
-
+//create password using user chosen length and character types
 function generatePassword() {
   let password = "";
   for(var i = 0; i < wordLength; i++) {
@@ -47,6 +49,7 @@ function generatePassword() {
   return password;
 }
 
+//ask user for password length and character types
 function getPrompts() {
   choiceArray = [];
   wordLength = parseInt(prompt("Choose a password length between 8 and 128 characters"));
